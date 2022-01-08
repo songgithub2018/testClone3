@@ -1,0 +1,24 @@
+#模拟两个EurekaServer
+#端口9000 , 8000
+#两个server需要相互注册
+spring:
+  application:
+    name: product_service_apollo
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    jpa:
+      database: MySQL
+      show-sql: true
+      open-in-view: true
+server:
+  port: 9001 #端口
+name: zhangsan
+apollo:
+  bootstrap:
+    enabled: true
+  meta: http://192.168.211.3:8080
+app:
+  id: product-service
